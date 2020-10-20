@@ -5,9 +5,13 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    test: ' Testing 123...',
+    psots: [],
   },
   mutations: {},
-  actions: {},
+  actions: {
+    loadPosts() {
+      console.log('loading posts')
+    },
+  },
   modules: {},
 })
