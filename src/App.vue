@@ -1,14 +1,20 @@
 <template>
   <div id="app">
-    <h1>{{ this.$store.state.test }}</h1>
+    <h1 v-for="posts in posts" :key="posts.id">{{ posts.title }}</h1>
+    {{ posts }}
   </div>
 </template>
 
 <script>
+import { mapState } from "vuex";
+
 export default {
   name: "App",
   mounted() {
     this.$store.dispatch("loadPosts");
+  },
+  computed: {
+    ...mapState(["posts"]),
   },
 };
 </script>
